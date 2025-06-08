@@ -1,0 +1,41 @@
+# إعدادات Netlify لموقع سطحة هيدروليك
+
+# إعدادات البناء
+[build]
+  publish = "/"
+  command = "# لا يوجد أمر بناء لموقع ثابت"
+
+# إعدادات التوجيه
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# إعدادات الرؤوس
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self' https://identity.netlify.com https://unpkg.com; script-src 'self' 'unsafe-inline' https://identity.netlify.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; img-src 'self' data: https://unpkg.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://identity.netlify.com;"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+
+# إعدادات خاصة بـ Netlify CMS
+[build.environment]
+  NODE_VERSION = "16.14.0"
+
+# إعدادات Netlify Identity
+[template.environment]
+  NETLIFY_IDENTITY_ENABLED = "true"
+
+# إعدادات الخدمات
+[dev]
+  framework = "#static"
+  command = "npx serve"
+  port = 8888
+  targetPort = 5000
+  publish = "/"
+  autoLaunch = true
+

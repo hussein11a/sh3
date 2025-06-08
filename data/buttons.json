@@ -1,0 +1,36 @@
+{
+  "floatingButtons": [
+    {
+      "id": 1,
+      "type": "call",
+      "text": "اتصل بنا",
+      "icon": "📞",
+      "action": "tel:+966500000000",
+      "color": "#28a745",
+      "position": "bottom-right",
+      "isActive": true,
+      "order": 1
+    },
+    {
+      "id": 2,
+      "type": "whatsapp",
+      "text": "واتساب",
+      "icon": "💬",
+      "action": "https://wa.me/966500000000",
+      "color": "#25d366",
+      "position": "bottom-left",
+      "isActive": true,
+      "order": 2
+    }
+  ],
+  "buttonSettings": {
+    "showText": true,
+    "showIcon": true,
+    "size": "medium",
+    "shape": "circle",
+    "animation": "pulse",
+    "shadow": true,
+    "mobileOnly": false
+  }
+}
+

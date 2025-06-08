@@ -1,0 +1,24 @@
+# robots.txt لموقع سطحة هيدروليك
+
+User-agent: *
+Allow: /
+
+# منع الوصول إلى مجلد الإدارة
+Disallow: /admin/
+Disallow: /admin/*
+
+# منع الوصول إلى ملفات JSON
+Disallow: /data/*.json
+
+# منع الوصول إلى صفحة عدم الاتصال
+Disallow: /offline.html
+
+# منع الوصول إلى ملفات الخدمة
+Disallow: /service-worker.js
+
+# السماح بالوصول إلى sitemap.xml
+Allow: /sitemap.xml
+
+# عنوان ملف Sitemap
+Sitemap: https://hydraulic-tow-truck.netlify.app/sitemap.xml
+

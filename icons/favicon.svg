@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
+  <rect width="180" height="180" fill="#0056b3" rx="40" ry="40"/>
+  <g transform="translate(90,90) scale(0.3)">
+    <g transform="translate(-256,-256)">
+      <path fill="#ffffff" d="M400 32H112c-8.8 0-16 7.2-16 16v416c0 8.8 7.2 16 16 16h288c8.8 0 16-7.2 16-16V48c0-8.8-7.2-16-16-16zM280 432h-48v-48h48v48zm0-80h-48v-48h48v48zm0-80h-48v-48h48v48zm88 160h-48v-48h48v48zm0-80h-48v-48h48v48zm0-80h-48v-48h48v48zm0-80H144v-64h224v64z"/>
+      <path fill="#ff9800" d="M144 368h48v48h-48zm0-80h48v48h-48zm0-80h48v48h-48z"/>
+    </g>
+  </g>
+</svg>
+

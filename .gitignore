@@ -1,0 +1,117 @@
+# ملفات النظام
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ملفات المحررات
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ملفات Node.js (إذا تم استخدامها لاحقاً)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ملفات البناء والتوزيع
+dist/
+build/
+*.tgz
+*.tar.gz
+
+# ملفات البيئة
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ملفات السجلات
+logs
+*.log
+
+# ملفات مؤقتة
+tmp/
+temp/
+*.tmp
+
+# ملفات النسخ الاحتياطي
+*.bak
+*.backup
+
+# ملفات الضغط
+*.zip
+*.rar
+*.7z
+
+# ملفات خاصة بـ Netlify (يتم إنشاؤها تلقائياً)
+.netlify/
+
+# ملفات خاصة بـ Git
+*.orig
+
+# ملفات التطوير المحلي
+local/
+dev/
+
+# ملفات الاختبار
+test-results/
+coverage/
+
+# ملفات الصور الأصلية (قبل التحسين)
+src-images/
+original-images/
+
+# ملفات التوثيق المؤقتة
+docs-temp/
+
+# ملفات خاصة بأنظمة التشغيل
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# ملفات خاصة بالمحررات
+# Vim
+*.swp
+*.swo
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Sublime Text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+

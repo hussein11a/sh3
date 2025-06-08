@@ -1,0 +1,37 @@
+{
+  "site": {
+    "title": "سطحة هيدروليك",
+    "description": "خدمات سطحة هيدروليك متميزة وسريعة على مدار الساعة",
+    "logo": "/img/logo.png",
+    "favicon": "/icons/favicon.ico",
+    "themeColor": "#0056b3",
+    "backgroundColor": "#ffffff",
+    "darkThemeColor": "#2196f3",
+    "darkBackgroundColor": "#121212",
+    "language": "ar",
+    "direction": "rtl",
+    "author": "سطحة هيدروليك",
+    "keywords": "سطحة, هيدروليك, سطحة هيدروليك, خدمات سطحة, سحب سيارات",
+    "ogImage": "/img/og-image.jpg",
+    "twitterCard": "summary_large_image",
+    "enableDarkMode": true,
+    "enableAutoDarkMode": true,
+    "enableBatterySaver": true,
+    "enableProtection": true
+  },
+  "seo": {
+    "title": "سطحة هيدروليك | خدمات سحب السيارات على مدار الساعة",
+    "description": "خدمات سطحة هيدروليك متميزة وسريعة لسحب ونقل السيارات على مدار الساعة في جميع المناطق",
+    "keywords": "سطحة, هيدروليك, سطحة هيدروليك, خدمات سطحة, سحب سيارات, نقل سيارات, سطحة 24 ساعة",
+    "ogTitle": "سطحة هيدروليك | خدمات سحب السيارات",
+    "ogDescription": "خدمات سطحة هيدروليك متميزة وسريعة لسحب ونقل السيارات على مدار الساعة",
+    "ogType": "website",
+    "ogUrl": "https://hydraulic-tow-truck.netlify.app",
+    "ogImage": "/img/og-image.jpg",
+    "twitterCard": "summary_large_image",
+    "twitterTitle": "سطحة هيدروليك | خدمات سحب السيارات",
+    "twitterDescription": "خدمات سطحة هيدروليك متميزة وسريعة لسحب ونقل السيارات على مدار الساعة",
+    "twitterImage": "/img/og-image.jpg"
+  }
+}
+

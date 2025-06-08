@@ -1,0 +1,284 @@
+/* 
+ * responsive.css - أنماط التصميم المتجاوب لموقع سطحة هيدروليك
+ */
+
+/* الشاشات الكبيرة (أكبر من 1200px) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* الشاشات المتوسطة (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    max-width: 960px;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  h1 {
+    font-size: 2.25rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+}
+
+/* الشاشات الصغيرة (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    max-width: 720px;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+  }
+  
+  .footer-section {
+    margin-bottom: var(--spacing-md);
+  }
+}
+
+/* الشاشات الصغيرة جدًا (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .container {
+    max-width: 540px;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+  
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+  }
+  
+  .hero {
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .services {
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+  }
+  
+  .footer-section {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .floating-button {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* الهواتف (أصغر من 576px) */
+@media (max-width: 575px) {
+  .container {
+    width: 100%;
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.25rem;
+  }
+  
+  h3 {
+    font-size: 1.1rem;
+  }
+  
+  .hero {
+    padding: var(--spacing-md) 0;
+  }
+  
+  .hero p {
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .services {
+    padding: var(--spacing-md) 0;
+  }
+  
+  .services-title {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .footer {
+    padding: var(--spacing-md) 0;
+    margin-top: var(--spacing-lg);
+  }
+  
+  .footer-content {
+    flex-direction: column;
+  }
+  
+  .footer-section {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .floating-button {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .header .container {
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+  
+  .logo {
+    font-size: 1.25rem;
+  }
+  
+  .logo img {
+    height: 30px;
+  }
+  
+  .theme-toggle {
+    font-size: 1.25rem;
+  }
+  
+  .service-image {
+    height: 150px;
+  }
+  
+  .service-content {
+    padding: var(--spacing-sm);
+  }
+  
+  .service-title {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .service-description {
+    font-size: 0.9rem;
+  }
+  
+  .btn {
+    padding: 0.4rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* تعديلات خاصة بالهواتف الصغيرة جدًا */
+@media (max-width: 320px) {
+  h1 {
+    font-size: 1.3rem;
+  }
+  
+  h2 {
+    font-size: 1.1rem;
+  }
+  
+  .hero p {
+    font-size: 0.85rem;
+  }
+  
+  .floating-button {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .logo {
+    font-size: 1.1rem;
+  }
+  
+  .logo img {
+    height: 25px;
+  }
+}
+
+/* تعديلات للأجهزة ذات الشاشات العالية الدقة */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* تعديلات للطباعة */
+@media print {
+  .floating-buttons,
+  .theme-toggle,
+  .loader {
+    display: none !important;
+  }
+  
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+  
+  .header,
+  .footer {
+    background-color: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+  
+  .service-card {
+    break-inside: avoid;
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+  }
+}
+

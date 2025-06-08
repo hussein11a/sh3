@@ -1,0 +1,130 @@
+/* 
+ * dark-mode.css - أنماط الوضع الليلي لموقع سطحة هيدروليك
+ */
+
+/* الوضع الليلي */
+body.dark-mode {
+  --primary-color: #2196f3;
+  --secondary-color: #ff9800;
+  --background-color: #121212;
+  --background-secondary: #1e1e1e;
+  --text-primary: #e0e0e0;
+  --text-secondary: #9e9e9e;
+  --border-color: #333333;
+  --success-color: #4caf50;
+  --warning-color: #ffeb3b;
+  --error-color: #f44336;
+}
+
+/* تعديلات الوضع الليلي */
+body.dark-mode {
+  background-color: var(--background-color);
+  color: var(--text-primary);
+}
+
+body.dark-mode .header {
+  background-color: var(--background-secondary);
+}
+
+body.dark-mode .hero {
+  background-color: var(--background-secondary);
+  border-bottom-color: var(--border-color);
+}
+
+body.dark-mode .service-card {
+  background-color: var(--background-secondary);
+}
+
+body.dark-mode .footer {
+  background-color: var(--background-secondary);
+}
+
+body.dark-mode .theme-toggle {
+  color: var(--text-primary);
+}
+
+body.dark-mode .loader {
+  background-color: var(--background-color);
+}
+
+body.dark-mode .spinner {
+  border-color: rgba(33, 150, 243, 0.2);
+  border-top-color: var(--primary-color);
+}
+
+/* تعديلات الأزرار في الوضع الليلي */
+body.dark-mode .btn {
+  background-color: var(--primary-color);
+}
+
+body.dark-mode .btn:hover {
+  background-color: #1976d2;
+}
+
+body.dark-mode .btn-secondary {
+  background-color: var(--secondary-color);
+}
+
+body.dark-mode .btn-secondary:hover {
+  background-color: #e68a00;
+}
+
+/* تعديلات الروابط في الوضع الليلي */
+body.dark-mode a {
+  color: var(--primary-color);
+}
+
+body.dark-mode a:hover {
+  color: var(--secondary-color);
+}
+
+/* تعديلات العناوين في الوضع الليلي */
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode h4, 
+body.dark-mode h5, 
+body.dark-mode h6 {
+  color: var(--primary-color);
+}
+
+/* تعديلات الظلال في الوضع الليلي */
+body.dark-mode .service-card {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .service-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .header {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .floating-button {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* تعديلات الأيقونات في الوضع الليلي */
+body.dark-mode .social-links a {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .social-links a:hover {
+  background-color: var(--secondary-color);
+}
+
+/* تعديلات الشاشة المتحركة في الوضع الليلي */
+body.dark-mode .loader {
+  background-color: var(--background-color);
+}
+
+/* تعديلات الأزرار العائمة في الوضع الليلي */
+body.dark-mode .floating-button.call {
+  background-color: var(--success-color);
+}
+
+body.dark-mode .floating-button.whatsapp {
+  background-color: #25d366;
+}
+

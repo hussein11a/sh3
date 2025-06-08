@@ -1,0 +1,71 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "سطحة هيدروليك",
+  "image": "https://hydraulic-tow-truck.netlify.app/img/logo.png",
+  "logo": "https://hydraulic-tow-truck.netlify.app/img/logo.png",
+  "@id": "https://hydraulic-tow-truck.netlify.app",
+  "url": "https://hydraulic-tow-truck.netlify.app",
+  "telephone": "+966500000000",
+  "priceRange": "$$",
+  "description": "خدمات سطحة هيدروليك متميزة وسريعة لسحب ونقل السيارات على مدار الساعة في جميع المناطق",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "SA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 24.7136,
+    "longitude": 46.6753
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "sameAs": [
+    "https://facebook.com/",
+    "https://twitter.com/",
+    "https://instagram.com/"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "خدمات سطحة هيدروليك",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "سحب السيارات",
+          "description": "خدمة سحب السيارات المعطلة أو المتضررة بسرعة وأمان إلى الوجهة المطلوبة"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "نقل السيارات",
+          "description": "خدمة نقل السيارات من مكان لآخر بكل احترافية وأمان تام"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "المساعدة على الطريق",
+          "description": "خدمات المساعدة على الطريق في حالات الطوارئ على مدار الساعة"
+        }
+      }
+    ]
+  }
+}
+

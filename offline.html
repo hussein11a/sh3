@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>غير متصل - سطحة هيدروليك</title>
+    
+    <!-- الأيقونات -->
+    <link rel="icon" href="/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+    
+    <!-- أنماط مضمنة للعمل بدون اتصال -->
+    <style>
+        /* استيراد الخطوط */
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+        
+        /* إعادة تعيين الأنماط الافتراضية */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* أنماط عامة */
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f8f9fa;
+            color: #333333;
+            line-height: 1.6;
+            direction: rtl;
+            overflow-x: hidden;
+        }
+        
+        a {
+            color: #0056b3;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: #ff9800;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* الحاوية */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* الرأس */
+        .header {
+            background-color: #0056b3;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-left: 0.5rem;
+        }
+        
+        /* قسم عدم الاتصال */
+        .offline-section {
+            padding: 3rem 0;
+            text-align: center;
+            min-height: calc(100vh - 180px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .offline-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            color: #ff9800;
+        }
+        
+        .offline-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #0056b3;
+        }
+        
+        .offline-message {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: #6c757d;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 600;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #004494;
+            transform: translateY(-2px);
+        }
+        
+        /* التذييل */
+        .footer {
+            background-color: #0056b3;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        
+        /* الأزرار العائمة */
+        .floating-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+        }
+        
+        .floating-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            margin: 0.5rem 0;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        
+        .floating-button.call {
+            background-color: #28a745;
+        }
+        
+        .floating-button.whatsapp {
+            background-color: #25d366;
+        }
+        
+        .floating-button:hover {
+            transform: scale(1.1);
+        }
+        
+        /* تصميم متجاوب */
+        @media (max-width: 768px) {
+            .offline-icon {
+                font-size: 4rem;
+            }
+            
+            .offline-title {
+                font-size: 1.5rem;
+            }
+            
+            .offline-message {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .offline-icon {
+                font-size: 3rem;
+            }
+            
+            .offline-title {
+                font-size: 1.25rem;
+            }
+            
+            .offline-message {
+                font-size: 0.9rem;
+            }
+            
+            .floating-button {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الرأس -->
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">
+                <span>سطحة هيدروليك</span>
+            </a>
+        </div>
+    </header>
+    
+    <!-- قسم عدم الاتصال -->
+    <section class="offline-section">
+        <div class="container">
+            <div class="offline-icon">📶</div>
+            <h1 class="offline-title">أنت غير متصل بالإنترنت</h1>
+            <p class="offline-message">يبدو أنك غير متصل بالإنترنت حاليًا. يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى.</p>
+            <button class="btn" onclick="window.location.reload()">إعادة المحاولة</button>
+        </div>
+    </section>
+    
+    <!-- التذييل -->
+    <footer class="footer">
+        <div class="container">
+            <p>جميع الحقوق محفوظة © 2025 سطحة هيدروليك</p>
+        </div>
+    </footer>
+    
+    <!-- الأزرار العائمة -->
+    <div class="floating-buttons">
+        <a href="tel:+966500000000" class="floating-button call">📞</a>
+        <a href="https://wa.me/966500000000" class="floating-button whatsapp">💬</a>
+    </div>
+    
+    <!-- سكربت بسيط للتحقق من الاتصال -->
+    <script>
+        // التحقق من حالة الاتصال
+        function checkConnection() {
+            if (navigator.onLine) {
+                window.location.href = '/';
+            }
+        }
+        
+        // التحقق من الاتصال عند تحميل الصفحة
+        window.addEventListener('load', checkConnection);
+        
+        // التحقق من الاتصال عند استعادة الاتصال
+        window.addEventListener('online', checkConnection);
+    </script>
+</body>
+</html>
+

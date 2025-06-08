@@ -1,0 +1,189 @@
+# تكوين Netlify CMS لموقع سطحة هيدروليك
+
+# إعدادات عامة
+backend:
+  name: git-gateway
+  branch: main # اسم الفرع الرئيسي في مستودع Git
+
+# عنوان لوحة التحكم
+site_url: https://hydraulic-tow-truck.netlify.app
+display_url: https://hydraulic-tow-truck.netlify.app
+logo_url: /img/logo.png
+
+# مجلد الوسائط
+media_folder: "img/uploads" # مجلد تخزين الصور المرفوعة
+public_folder: "/img/uploads" # المسار العام للصور المرفوعة
+
+# إعدادات المعاينة المباشرة
+locale: 'ar'
+publish_mode: editorial_workflow # تفعيل سير العمل التحريري
+
+# المجموعات
+collections:
+  # إعدادات الموقع
+  - name: "site"
+    label: "إعدادات الموقع"
+    description: "إعدادات عامة للموقع"
+    files:
+      - name: "settings"
+        label: "إعدادات الموقع"
+        file: "data/site.json"
+        description: "إعدادات عامة للموقع"
+        fields:
+          - label: "إعدادات الموقع"
+            name: "site"
+            widget: "object"
+            fields:
+              - { label: "عنوان الموقع", name: "title", widget: "string" }
+              - { label: "وصف الموقع", name: "description", widget: "string" }
+              - { label: "شعار الموقع", name: "logo", widget: "image", required: false }
+              - { label: "أيقونة الموقع", name: "favicon", widget: "image", required: false }
+              - { label: "لون الثيم (النهاري)", name: "themeColor", widget: "color", required: false }
+              - { label: "لون الخلفية (النهاري)", name: "backgroundColor", widget: "color", required: false }
+              - { label: "لون الثيم (الليلي)", name: "darkThemeColor", widget: "color", required: false }
+              - { label: "لون الخلفية (الليلي)", name: "darkBackgroundColor", widget: "color", required: false }
+              - { label: "لغة الموقع", name: "language", widget: "string", default: "ar" }
+              - { label: "اتجاه الموقع", name: "direction", widget: "select", options: ["rtl", "ltr"], default: "rtl" }
+              - { label: "اسم المؤلف", name: "author", widget: "string", required: false }
+              - { label: "الكلمات المفتاحية", name: "keywords", widget: "string", required: false }
+              - { label: "صورة المشاركة الاجتماعية", name: "ogImage", widget: "image", required: false }
+              - { label: "نوع بطاقة تويتر", name: "twitterCard", widget: "select", options: ["summary", "summary_large_image"], default: "summary_large_image", required: false }
+              - { label: "تفعيل الوضع الليلي", name: "enableDarkMode", widget: "boolean", default: true }
+              - { label: "تفعيل الوضع الليلي التلقائي", name: "enableAutoDarkMode", widget: "boolean", default: true }
+              - { label: "تفعيل وضع توفير البطارية", name: "enableBatterySaver", widget: "boolean", default: true }
+              - { label: "تفعيل حماية المحتوى", name: "enableProtection", widget: "boolean", default: true }
+          
+          - label: "إعدادات SEO"
+            name: "seo"
+            widget: "object"
+            fields:
+              - { label: "عنوان الصفحة", name: "title", widget: "string" }
+              - { label: "وصف الصفحة", name: "description", widget: "string" }
+              - { label: "الكلمات المفتاحية", name: "keywords", widget: "string" }
+              - { label: "عنوان Open Graph", name: "ogTitle", widget: "string", required: false }
+              - { label: "وصف Open Graph", name: "ogDescription", widget: "string", required: false }
+              - { label: "نوع Open Graph", name: "ogType", widget: "string", default: "website", required: false }
+              - { label: "رابط Open Graph", name: "ogUrl", widget: "string", required: false }
+              - { label: "صورة Open Graph", name: "ogImage", widget: "image", required: false }
+              - { label: "نوع بطاقة تويتر", name: "twitterCard", widget: "select", options: ["summary", "summary_large_image"], default: "summary_large_image", required: false }
+              - { label: "عنوان تويتر", name: "twitterTitle", widget: "string", required: false }
+              - { label: "وصف تويتر", name: "twitterDescription", widget: "string", required: false }
+              - { label: "صورة تويتر", name: "twitterImage", widget: "image", required: false }
+  
+  # الخدمات
+  - name: "services"
+    label: "الخدمات"
+    description: "إدارة خدمات سطحة هيدروليك"
+    files:
+      - name: "services"
+        label: "الخدمات"
+        file: "data/services.json"
+        description: "إدارة خدمات سطحة هيدروليك"
+        fields:
+          - label: "الخدمات"
+            name: "services"
+            widget: "list"
+            fields:
+              - { label: "المعرف", name: "id", widget: "number" }
+              - { label: "عنوان الخدمة", name: "title", widget: "string" }
+              - { label: "وصف الخدمة", name: "description", widget: "string" }
+              - { label: "أيقونة الخدمة", name: "icon", widget: "string", required: false }
+              - { label: "صورة الخدمة", name: "image", widget: "image", required: false }
+              - { label: "نشط", name: "isActive", widget: "boolean", default: true }
+              - { label: "الترتيب", name: "order", widget: "number", default: 1 }
+          
+          - label: "إعدادات الخدمات"
+            name: "serviceSettings"
+            widget: "object"
+            fields:
+              - { label: "عنوان قسم الخدمات", name: "title", widget: "string" }
+              - { label: "العنوان الفرعي", name: "subtitle", widget: "string", required: false }
+              - { label: "وصف قسم الخدمات", name: "description", widget: "string", required: false }
+              - { label: "إظهار الأيقونات", name: "showIcons", widget: "boolean", default: true }
+              - { label: "إظهار الصور", name: "showImages", widget: "boolean", default: true }
+              - { label: "تخطيط العرض", name: "layout", widget: "select", options: ["grid", "list"], default: "grid" }
+              - { label: "عدد العناصر في الصف", name: "itemsPerRow", widget: "number", default: 3, min: 1, max: 4 }
+  
+  # الأزرار العائمة
+  - name: "buttons"
+    label: "الأزرار العائمة"
+    description: "إدارة الأزرار العائمة"
+    files:
+      - name: "buttons"
+        label: "الأزرار العائمة"
+        file: "data/buttons.json"
+        description: "إدارة الأزرار العائمة"
+        fields:
+          - label: "الأزرار العائمة"
+            name: "floatingButtons"
+            widget: "list"
+            fields:
+              - { label: "المعرف", name: "id", widget: "number" }
+              - { label: "نوع الزر", name: "type", widget: "select", options: ["call", "whatsapp", "email", "custom"], default: "call" }
+              - { label: "نص الزر", name: "text", widget: "string" }
+              - { label: "أيقونة الزر", name: "icon", widget: "string" }
+              - { label: "إجراء الزر", name: "action", widget: "string" }
+              - { label: "لون الزر", name: "color", widget: "color" }
+              - { label: "موضع الزر", name: "position", widget: "select", options: ["bottom-right", "bottom-left", "top-right", "top-left"], default: "bottom-right" }
+              - { label: "نشط", name: "isActive", widget: "boolean", default: true }
+              - { label: "الترتيب", name: "order", widget: "number", default: 1 }
+          
+          - label: "إعدادات الأزرار"
+            name: "buttonSettings"
+            widget: "object"
+            fields:
+              - { label: "إظهار النص", name: "showText", widget: "boolean", default: true }
+              - { label: "إظهار الأيقونة", name: "showIcon", widget: "boolean", default: true }
+              - { label: "حجم الزر", name: "size", widget: "select", options: ["small", "medium", "large"], default: "medium" }
+              - { label: "شكل الزر", name: "shape", widget: "select", options: ["circle", "square", "rounded"], default: "circle" }
+              - { label: "تأثير الزر", name: "animation", widget: "select", options: ["none", "pulse", "bounce", "shake"], default: "pulse" }
+              - { label: "إظهار الظل", name: "shadow", widget: "boolean", default: true }
+              - { label: "عرض على الجوال فقط", name: "mobileOnly", widget: "boolean", default: false }
+  
+  # تذييل الموقع
+  - name: "footer"
+    label: "تذييل الموقع"
+    description: "إدارة تذييل الموقع"
+    files:
+      - name: "footer"
+        label: "تذييل الموقع"
+        file: "data/footer.json"
+        description: "إدارة تذييل الموقع"
+        fields:
+          - label: "تذييل الموقع"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "اسم الشركة", name: "companyName", widget: "string" }
+              - { label: "السنة", name: "year", widget: "number", default: 2025 }
+              - { label: "نص حقوق النشر", name: "copyright", widget: "string" }
+              - { label: "إظهار حقوق النشر", name: "showCopyright", widget: "boolean", default: true }
+              - { label: "إظهار السنة", name: "showYear", widget: "boolean", default: true }
+              - { label: "لون الخلفية (النهاري)", name: "backgroundColor", widget: "color" }
+              - { label: "لون النص (النهاري)", name: "textColor", widget: "color" }
+              - { label: "لون الخلفية (الليلي)", name: "darkBackgroundColor", widget: "color" }
+              - { label: "لون النص (الليلي)", name: "darkTextColor", widget: "color" }
+          
+          - label: "معلومات الاتصال"
+            name: "contactInfo"
+            widget: "list"
+            fields:
+              - { label: "المعرف", name: "id", widget: "number" }
+              - { label: "نوع الاتصال", name: "type", widget: "select", options: ["phone", "whatsapp", "email", "address", "custom"], default: "phone" }
+              - { label: "عنوان الاتصال", name: "label", widget: "string" }
+              - { label: "قيمة الاتصال", name: "value", widget: "string" }
+              - { label: "أيقونة الاتصال", name: "icon", widget: "string", required: false }
+              - { label: "نشط", name: "isActive", widget: "boolean", default: true }
+              - { label: "الترتيب", name: "order", widget: "number", default: 1 }
+          
+          - label: "وسائل التواصل الاجتماعي"
+            name: "socialMedia"
+            widget: "list"
+            fields:
+              - { label: "المعرف", name: "id", widget: "number" }
+              - { label: "المنصة", name: "platform", widget: "string" }
+              - { label: "الرابط", name: "url", widget: "string" }
+              - { label: "الأيقونة", name: "icon", widget: "string", required: false }
+              - { label: "نشط", name: "isActive", widget: "boolean", default: true }
+              - { label: "الترتيب", name: "order", widget: "number", default: 1 }
+

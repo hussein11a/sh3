@@ -1,0 +1,69 @@
+{
+  "footer": {
+    "companyName": "سطحة هيدروليك",
+    "year": 2025,
+    "copyright": "جميع الحقوق محفوظة",
+    "showCopyright": true,
+    "showYear": true,
+    "backgroundColor": "#0056b3",
+    "textColor": "#ffffff",
+    "darkBackgroundColor": "#121212",
+    "darkTextColor": "#ffffff"
+  },
+  "contactInfo": [
+    {
+      "id": 1,
+      "type": "phone",
+      "label": "رقم الهاتف",
+      "value": "+966500000000",
+      "icon": "phone",
+      "isActive": true,
+      "order": 1
+    },
+    {
+      "id": 2,
+      "type": "whatsapp",
+      "label": "واتساب",
+      "value": "+966500000000",
+      "icon": "whatsapp",
+      "isActive": true,
+      "order": 2
+    },
+    {
+      "id": 3,
+      "type": "email",
+      "label": "البريد الإلكتروني",
+      "value": "info@hydraulic-tow-truck.com",
+      "icon": "email",
+      "isActive": true,
+      "order": 3
+    }
+  ],
+  "socialMedia": [
+    {
+      "id": 1,
+      "platform": "facebook",
+      "url": "https://facebook.com/",
+      "icon": "facebook",
+      "isActive": true,
+      "order": 1
+    },
+    {
+      "id": 2,
+      "platform": "twitter",
+      "url": "https://twitter.com/",
+      "icon": "twitter",
+      "isActive": true,
+      "order": 2
+    },
+    {
+      "id": 3,
+      "platform": "instagram",
+      "url": "https://instagram.com/",
+      "icon": "instagram",
+      "isActive": true,
+      "order": 3
+    }
+  ]
+}
+
