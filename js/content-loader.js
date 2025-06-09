@@ -7,7 +7,6 @@ const servicesContainer = document.getElementById('services-container');
 const contactInfoContainer = document.getElementById('contact-info');
 const socialLinksContainer = document.getElementById('social-links');
 const copyrightContainer = document.getElementById('copyright');
-const floatingButtonsContainer = document.getElementById('floating-buttons');
 
 // دالة تهيئة تحميل المحتوى
 function initializeContentLoader() {
@@ -332,10 +331,15 @@ async function loadFooterData() {
 // دالة لتحميل الأزرار العائمة
 async function loadFloatingButtons() {
     try {
+        console.log('Starting to load floating buttons...');
+        
+        const floatingButtonsContainer = document.getElementById('floating-buttons');
         if (!floatingButtonsContainer) {
-            console.warn('Floating buttons container not found');
+            console.error('Floating buttons container not found');
             return;
         }
+        
+        console.log('Floating buttons container found:', floatingButtonsContainer);
         
         const response = await fetch('/data/buttons.json');
         if (!response.ok) {
@@ -343,19 +347,25 @@ async function loadFloatingButtons() {
         }
         
         const data = await response.json();
+        console.log('Buttons data loaded:', data);
         
         // مسح المحتوى الحالي
         floatingButtonsContainer.innerHTML = '';
         
         // ترتيب الأزرار حسب الترتيب
         const sortedButtons = [...data.floatingButtons].sort((a, b) => a.order - b.order);
+        console.log('Sorted buttons:', sortedButtons);
         
         // إضافة الأزرار النشطة فقط
         sortedButtons.filter(button => button.isActive).forEach(button => {
+            console.log('Creating button:', button);
+            
             const buttonElement = document.createElement('a');
             buttonElement.href = button.action;
             buttonElement.className = `floating-button ${button.type} ${button.position}`;
             buttonElement.style.backgroundColor = button.color || '';
+            buttonElement.style.position = 'fixed';
+            buttonElement.style.zIndex = '1000';
             
             // إضافة الأيقونة إذا كانت مفعلة
             if (data.buttonSettings?.showIcon && button.icon) {
@@ -374,7 +384,7 @@ async function loadFloatingButtons() {
             
             // إضافة الظل
             if (data.buttonSettings?.shadow) {
-                buttonElement.style.boxShadow = 'var(--shadow-md)';
+                buttonElement.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
             }
             
             // إضافة الشكل
@@ -399,18 +409,33 @@ async function loadFloatingButtons() {
                 buttonElement.classList.add('mobile-only');
             }
             
+            // إضافة الموضع
+            if (button.position === 'bottom-right') {
+                buttonElement.style.bottom = '20px';
+                buttonElement.style.right = '20px';
+            } else if (button.position === 'bottom-left') {
+                buttonElement.style.bottom = '20px';
+                buttonElement.style.left = '20px';
+            }
+            
             floatingButtonsContainer.appendChild(buttonElement);
+            console.log('Button added to container:', buttonElement);
         });
         
         console.log('Floating buttons loaded successfully');
+        console.log('Container content:', floatingButtonsContainer.innerHTML);
     } catch (error) {
         console.error('Error loading floating buttons:', error);
         
         // إضافة أزرار بديلة في حالة الخطأ
-        floatingButtonsContainer.innerHTML = `
-            <a href="tel:+966500000000" class="floating-button call bottom-right">📞</a>
-            <a href="https://wa.me/966500000000" class="floating-button whatsapp bottom-left">💬</a>
-        `;
+        const floatingButtonsContainer = document.getElementById('floating-buttons');
+        if (floatingButtonsContainer) {
+            floatingButtonsContainer.innerHTML = `
+                <a href="tel:+966500000000" class="floating-button call" style="position: fixed; bottom: 20px; right: 20px; background-color: #28a745; z-index: 1000;">📞</a>
+                <a href="https://wa.me/966500000000" class="floating-button whatsapp" style="position: fixed; bottom: 20px; left: 20px; background-color: #25d366; z-index: 1000;">💬</a>
+            `;
+            console.log('Fallback buttons added');
+        }
     }
 }
 

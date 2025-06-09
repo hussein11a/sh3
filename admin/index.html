@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>لوحة تحكم سطحة هيدروليك</title>
     
-    <!-- استيراد أنماط Netlify CMS -->
-    <link href="https://unpkg.com/netlify-cms@^2.0.0/dist/cms.css" rel="stylesheet">
+    <!-- Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     
     <!-- أنماط مخصصة للوحة التحكم -->
     <style>
@@ -18,51 +18,50 @@
         body {
             font-family: 'Cairo', 'Tajawal', sans-serif;
             direction: rtl;
+            margin: 0;
+            padding: 0;
         }
         
-        /* تعديل أنماط Netlify CMS للدعم العربي */
-        .nc-controlPane-root {
+        /* تحسين عرض لوحة التحكم */
+        .nc-app-container {
             direction: rtl;
-        }
-        
-        .nc-entryEditor-container {
-            direction: rtl;
-        }
-        
-        .nc-collectionPage-container {
-            direction: rtl;
-        }
-        
-        /* تعديل أنماط الأزرار */
-        .nc-appHeader-content {
-            direction: ltr;
         }
         
         /* تعديل أنماط النصوص */
-        .nc-collectionPage-sidebarHeading {
-            text-align: right;
-        }
-        
-        .nc-entryEditor-header {
-            text-align: right;
-        }
-        
-        /* تعديل أنماط الحقول */
-        .nc-controlPane-control {
-            text-align: right;
-        }
-        
+        .nc-collectionPage-sidebarHeading,
+        .nc-entryEditor-header,
         .nc-controlPane-label {
             text-align: right;
         }
         
-        /* تعديل أنماط القوائم */
+        /* تحسين عرض الحقول */
+        .nc-controlPane-control {
+            text-align: right;
+        }
+        
+        /* تحسين عرض القوائم */
         .nc-collectionPage-sidebar {
             text-align: right;
         }
         
-        /* تعديل أنماط الرسائل */
+        /* تحسين عرض الرسائل */
         .nc-toast-container {
+            direction: rtl;
+            text-align: right;
+        }
+        
+        /* تحسين عرض الأزرار */
+        .nc-button {
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        /* تحسين عرض النماذج */
+        .nc-form {
+            direction: rtl;
+        }
+        
+        /* تحسين عرض المحرر */
+        .nc-editor {
             direction: rtl;
             text-align: right;
         }
@@ -72,45 +71,25 @@
     <!-- سكربت Netlify CMS -->
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
     
-    <!-- سكربت مخصص للوحة التحكم -->
+    <!-- سكربت مخصص بسيط -->
     <script>
-        // تكوين Netlify CMS
+        // تكوين Netlify Identity
         if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", user => {
+            window.netlifyIdentity.on("init", function(user) {
                 if (!user) {
-                    window.netlifyIdentity.on("login", () => {
+                    window.netlifyIdentity.on("login", function() {
                         document.location.href = "/admin/";
                     });
                 }
             });
         }
         
-        // تعديل واجهة المستخدم لدعم اللغة العربية
-        CMS.registerPreviewStyle("/css/main.css");
-        CMS.registerPreviewStyle("/css/dark-mode.css");
-        CMS.registerPreviewStyle("/css/responsive.css");
-        
-        // تعديل عناوين الأقسام
-        const arabicLabels = {
-            'site': 'إعدادات الموقع',
-            'services': 'الخدمات',
-            'buttons': 'الأزرار العائمة',
-            'footer': 'تذييل الموقع'
-        };
-        
-        // تطبيق التعديلات بعد تحميل الصفحة
-        document.addEventListener('DOMContentLoaded', () => {
-            // تعديل عناوين الأقسام
-            setTimeout(() => {
-                const collectionLabels = document.querySelectorAll('.nc-collectionPage-sidebarLink');
-                collectionLabels.forEach(label => {
-                    const key = label.textContent.trim().toLowerCase();
-                    if (arabicLabels[key]) {
-                        label.textContent = arabicLabels[key];
-                    }
-                });
-            }, 1000);
-        });
+        // تسجيل أنماط المعاينة
+        if (window.CMS) {
+            CMS.registerPreviewStyle("/css/main.css");
+            CMS.registerPreviewStyle("/css/dark-mode.css");
+            CMS.registerPreviewStyle("/css/responsive.css");
+        }
     </script>
 </body>
 </html>
