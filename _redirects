@@ -1,0 +1,10 @@
+# Netlify Identity redirects
+/.netlify/identity/*  /.netlify/identity/:splat  200
+/.netlify/functions/*  /.netlify/functions/:splat  200
+
+# Admin panel redirect
+/admin/*  /admin/index.html  200
+
+# SPA fallback
+/*  /index.html  200
+

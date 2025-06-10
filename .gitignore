@@ -53,6 +53,8 @@ temp/
 
 # ملفات خاصة بـ Netlify (يتم إنشاؤها تلقائياً)
 .netlify/
+!.netlify/identity/
+!.netlify/functions/
 
 # ملفات خاصة بـ Git
 *.orig

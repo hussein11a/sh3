@@ -5,7 +5,29 @@
   publish = "/"
   command = "# لا يوجد أمر بناء لموقع ثابت"
 
+# إعدادات Netlify Identity
+[identity]
+  enabled = true
+
+[identity.settings]
+  enable_signup = true
+  autoconfirm = true
+  roles = ["admin", "editor"]
+
+[identity.registration]
+  open = false
+
+[identity.emails]
+  welcome = "مرحباً بك في لوحة تحكم سطحة هيدروليك"
+  confirmation = "يرجى تأكيد بريدك الإلكتروني"
+  recovery = "رابط استعادة كلمة المرور"
+
 # إعدادات التوجيه
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
@@ -25,9 +47,6 @@
 # إعدادات خاصة بـ Netlify CMS
 [build.environment]
   NODE_VERSION = "16.14.0"
-
-# إعدادات Netlify Identity
-[template.environment]
   NETLIFY_IDENTITY_ENABLED = "true"
 
 # إعدادات الخدمات

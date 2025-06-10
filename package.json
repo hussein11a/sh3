@@ -1,0 +1,33 @@
+{
+  "name": "hydraulic-tow-truck-website",
+  "version": "1.0.0",
+  "description": "موقع ويب ثابت لخدمات سطحة هيدروليك مع Netlify CMS",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static site - no build required'",
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "hydraulic",
+    "tow-truck",
+    "netlify",
+    "cms",
+    "arabic",
+    "static-site"
+  ],
+  "author": "Hydraulic Tow Truck Team",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hussein11a/sh3.git"
+  },
+  "homepage": "https://sathtye.netlify.app",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
+
