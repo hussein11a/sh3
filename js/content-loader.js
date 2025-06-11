@@ -331,15 +331,15 @@ async function loadFooterData() {
 // دالة لتحميل الأزرار العائمة
 async function loadFloatingButtons() {
     try {
-        console.log('Starting to load floating buttons...');
+        console.log('🔄 Starting to load floating buttons...');
         
         const floatingButtonsContainer = document.getElementById('floating-buttons');
         if (!floatingButtonsContainer) {
-            console.error('Floating buttons container not found');
+            console.error('❌ Floating buttons container not found');
             return;
         }
         
-        console.log('Floating buttons container found:', floatingButtonsContainer);
+        console.log('✅ Floating buttons container found:', floatingButtonsContainer);
         
         const response = await fetch('/data/buttons.json');
         if (!response.ok) {
@@ -347,18 +347,31 @@ async function loadFloatingButtons() {
         }
         
         const data = await response.json();
-        console.log('Buttons data loaded:', data);
+        console.log('✅ Buttons data loaded:', data);
         
         // مسح المحتوى الحالي
         floatingButtonsContainer.innerHTML = '';
         
+        // التحقق من وجود البيانات
+        if (!data.floatingButtons || !Array.isArray(data.floatingButtons)) {
+            throw new Error('Invalid buttons data structure');
+        }
+        
         // ترتيب الأزرار حسب الترتيب
         const sortedButtons = [...data.floatingButtons].sort((a, b) => a.order - b.order);
-        console.log('Sorted buttons:', sortedButtons);
+        console.log('📋 Sorted buttons:', sortedButtons);
         
         // إضافة الأزرار النشطة فقط
-        sortedButtons.filter(button => button.isActive).forEach(button => {
-            console.log('Creating button:', button);
+        const activeButtons = sortedButtons.filter(button => button.isActive);
+        console.log('🎯 Active buttons:', activeButtons);
+        
+        if (activeButtons.length === 0) {
+            console.warn('⚠️ No active buttons found');
+            return;
+        }
+        
+        activeButtons.forEach((button, index) => {
+            console.log(`🔨 Creating button ${index + 1}:`, button);
             
             const buttonElement = document.createElement('a');
             buttonElement.href = button.action;
@@ -366,47 +379,26 @@ async function loadFloatingButtons() {
             buttonElement.style.backgroundColor = button.color || '';
             buttonElement.style.position = 'fixed';
             buttonElement.style.zIndex = '1000';
+            buttonElement.style.textDecoration = 'none';
+            buttonElement.style.display = 'flex';
+            buttonElement.style.alignItems = 'center';
+            buttonElement.style.justifyContent = 'center';
+            buttonElement.style.width = '60px';
+            buttonElement.style.height = '60px';
+            buttonElement.style.borderRadius = '50%';
+            buttonElement.style.color = 'white';
+            buttonElement.style.fontSize = '24px';
+            buttonElement.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+            buttonElement.style.transition = 'transform 0.3s ease';
             
             // إضافة الأيقونة إذا كانت مفعلة
             if (data.buttonSettings?.showIcon && button.icon) {
                 buttonElement.innerHTML += button.icon;
             }
             
-            // إضافة النص إذا كان مفعلاً
+            // إضافة النص إذا كان مفعلاً (مخفي افتراضياً للأزرار الدائرية)
             if (data.buttonSettings?.showText && button.text) {
-                buttonElement.innerHTML += ` <span class="button-text">${button.text}</span>`;
-            }
-            
-            // إضافة التأثيرات
-            if (data.buttonSettings?.animation) {
-                buttonElement.classList.add(data.buttonSettings.animation);
-            }
-            
-            // إضافة الظل
-            if (data.buttonSettings?.shadow) {
-                buttonElement.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
-            }
-            
-            // إضافة الشكل
-            if (data.buttonSettings?.shape) {
-                buttonElement.style.borderRadius = data.buttonSettings.shape === 'circle' ? '50%' : '4px';
-            }
-            
-            // إضافة الحجم
-            if (data.buttonSettings?.size) {
-                let size = '60px';
-                if (data.buttonSettings.size === 'small') {
-                    size = '45px';
-                } else if (data.buttonSettings.size === 'large') {
-                    size = '75px';
-                }
-                buttonElement.style.width = size;
-                buttonElement.style.height = size;
-            }
-            
-            // إضافة خاصية عرض الأزرار على الجوال فقط
-            if (data.buttonSettings?.mobileOnly) {
-                buttonElement.classList.add('mobile-only');
+                buttonElement.innerHTML += ` <span class="button-text" style="display: none;">${button.text}</span>`;
             }
             
             // إضافة الموضع
@@ -418,23 +410,56 @@ async function loadFloatingButtons() {
                 buttonElement.style.left = '20px';
             }
             
+            // إضافة تأثير hover
+            buttonElement.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1)';
+            });
+            
+            buttonElement.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+            
+            // إضافة title للوصولية
+            buttonElement.title = button.text || button.type;
+            
             floatingButtonsContainer.appendChild(buttonElement);
-            console.log('Button added to container:', buttonElement);
+            console.log(`✅ Button ${index + 1} added to container:`, buttonElement);
         });
         
-        console.log('Floating buttons loaded successfully');
-        console.log('Container content:', floatingButtonsContainer.innerHTML);
+        console.log('🎉 Floating buttons loaded successfully');
+        console.log('📄 Container final content:', floatingButtonsContainer.innerHTML);
+        
+        // التحقق من أن الأزرار مرئية
+        setTimeout(() => {
+            const buttons = floatingButtonsContainer.querySelectorAll('.floating-button');
+            console.log(`🔍 Found ${buttons.length} buttons in DOM`);
+            buttons.forEach((btn, i) => {
+                const rect = btn.getBoundingClientRect();
+                console.log(`Button ${i + 1} position:`, {
+                    visible: rect.width > 0 && rect.height > 0,
+                    position: { top: rect.top, left: rect.left, width: rect.width, height: rect.height }
+                });
+            });
+        }, 100);
+        
     } catch (error) {
-        console.error('Error loading floating buttons:', error);
+        console.error('❌ Error loading floating buttons:', error);
         
         // إضافة أزرار بديلة في حالة الخطأ
         const floatingButtonsContainer = document.getElementById('floating-buttons');
         if (floatingButtonsContainer) {
+            console.log('🔧 Adding fallback buttons...');
             floatingButtonsContainer.innerHTML = `
-                <a href="tel:+966500000000" class="floating-button call" style="position: fixed; bottom: 20px; right: 20px; background-color: #28a745; z-index: 1000;">📞</a>
-                <a href="https://wa.me/966500000000" class="floating-button whatsapp" style="position: fixed; bottom: 20px; left: 20px; background-color: #25d366; z-index: 1000;">💬</a>
+                <a href="tel:+966500000000" 
+                   class="floating-button call" 
+                   style="position: fixed; bottom: 20px; right: 20px; background-color: #28a745; z-index: 1000; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"
+                   title="اتصل بنا">📞</a>
+                <a href="https://wa.me/966500000000" 
+                   class="floating-button whatsapp" 
+                   style="position: fixed; bottom: 20px; left: 20px; background-color: #25d366; z-index: 1000; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"
+                   title="واتساب">💬</a>
             `;
-            console.log('Fallback buttons added');
+            console.log('✅ Fallback buttons added');
         }
     }
 }
