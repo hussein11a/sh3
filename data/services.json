@@ -2,55 +2,49 @@
   "services": [
     {
       "id": 1,
-      "title": "سحب السيارات",
-      "description": "خدمة سحب السيارات المعطلة أو المتضررة بسرعة وأمان إلى الوجهة المطلوبة",
-      "icon": "car-tow",
-      "image": "/img/services/towing.jpg",
+      "title": "خدمة نقل السيارات لمراكز الصيانة",
+      "description": "نوفر خدمة نقل سيارتك بأمان تام من وإلى مراكز الصيانة المعتمدة، لضمان راحتك وتوفير وقتك.",
+      "icon": "car_repair.png",
       "isActive": true,
       "order": 1
     },
     {
       "id": 2,
-      "title": "نقل السيارات",
-      "description": "خدمة نقل السيارات من مكان لآخر بكل احترافية وأمان تام",
-      "icon": "car-transport",
-      "image": "/img/services/transport.jpg",
+      "title": "خدمة نقل السيارات لمراكز التقديرات",
+      "description": "نقوم بنقل سيارتك إلى مراكز التقديرات لتقييم الأضرار، مع الحرص على التعامل الاحترافي والدقيق.",
+      "icon": "car_assessment.png",
       "isActive": true,
       "order": 2
     },
     {
       "id": 3,
-      "title": "المساعدة على الطريق",
-      "description": "خدمات المساعدة على الطريق في حالات الطوارئ على مدار الساعة",
-      "icon": "roadside-assistance",
-      "image": "/img/services/roadside.jpg",
+      "title": "خدمة نقل السيارات لمراكز الفحص الدوري",
+      "description": "نقدم خدمة نقل سيارتك إلى مراكز الفحص الدوري، لضمان اجتيازها الفحص بسهولة ويسر.",
+      "icon": "car_inspection.png",
       "isActive": true,
       "order": 3
     },
     {
       "id": 4,
-      "title": "شحن البطارية",
-      "description": "خدمة شحن بطارية السيارة في حالة نفاد الشحن أو تعطلها",
-      "icon": "battery-charge",
-      "image": "/img/services/battery.jpg",
+      "title": "خدمة نقل السيارات المتعطلة (زلاجات متوفرة)",
+      "description": "خدمة متخصصة لنقل السيارات التي تعاني من أعطال في ناقل الحركة (القير)، حيث نوفر زلاجات لضمان نقل آمن وسلس.",
+      "icon": "broken_car_towing.png",
       "isActive": true,
       "order": 4
     },
     {
       "id": 5,
-      "title": "تبديل الإطارات",
-      "description": "خدمة تبديل الإطارات في حالات الطوارئ على الطريق",
-      "icon": "tire-change",
-      "image": "/img/services/tire.jpg",
+      "title": "خدمة نقل السيارات الفاخرة",
+      "description": "خدمة نقل مخصصة للسيارات الفاخرة، مع توفير أقصى درجات العناية والحماية لضمان وصولها بأمان.",
+      "icon": "luxury_car_transport.png",
       "isActive": true,
       "order": 5
     },
     {
       "id": 6,
-      "title": "فتح السيارات المقفلة",
-      "description": "خدمة فتح السيارات في حالة نسيان المفاتيح داخل السيارة",
-      "icon": "car-unlock",
-      "image": "/img/services/unlock.jpg",
+      "title": "خدمة نقل الدبابات",
+      "description": "خدمة نقل آمنة وموثوقة للدبابات، مع ضمان التعامل الاحترافي والحفاظ على سلامتها خلال النقل.",
+      "icon": "motorcycle_transport.png",
       "isActive": true,
       "order": 6
     }
@@ -60,7 +54,7 @@
     "subtitle": "نقدم مجموعة متكاملة من خدمات السطحة الهيدروليكية",
     "description": "خدمات سطحة هيدروليك متميزة وسريعة على مدار الساعة لمساعدتك في جميع حالات الطوارئ على الطريق",
     "showIcons": true,
-    "showImages": true,
+    "showImages": false,
     "layout": "grid",
     "itemsPerRow": 3
   }
