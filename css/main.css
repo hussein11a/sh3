@@ -293,7 +293,7 @@ p {
 /* الأزرار العائمة */
 .floating-buttons {
   position: fixed;
-  z-index: 99;
+  z-index: 1000;
 }
 
 .floating-button {
@@ -304,32 +304,90 @@ p {
   height: 60px;
   border-radius: 50%;
   color: white;
-  box-shadow: var(--shadow-md);
-  margin: var(--spacing-sm) 0;
-  transition: transform var(--transition-time);
+  text-decoration: none;
+  font-size: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  border: none;
+  outline: none;
 }
 
 .floating-button:hover {
   transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
 }
 
-.floating-button.call {
-  background-color: var(--success-color);
+.floating-button:active {
+  transform: scale(0.95);
 }
 
-.floating-button.whatsapp {
+.floating-button.call,
+.call-button {
+  background-color: #28a745;
+}
+
+.floating-button.whatsapp,
+.whatsapp-button {
   background-color: #25d366;
 }
 
-.bottom-right {
-  bottom: 20px;
+/* مواضع الأزرار - جميعها أسفل يمين */
+.call-button {
+  position: fixed;
+  bottom: 90px;
   right: 20px;
+  z-index: 1000;
 }
 
-.bottom-left {
+.whatsapp-button {
+  position: fixed;
   bottom: 20px;
-  left: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* تحسينات للأجهزة المحمولة */
+@media (max-width: 768px) {
+  .floating-button {
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
+  }
+  
+  .call-button {
+    bottom: 85px;
+    right: 15px;
+  }
+  
+  .whatsapp-button {
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+/* تأثيرات إضافية */
+.floating-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.floating-button:hover::before {
+  opacity: 1;
+}
+
+/* إخفاء الأزرار القديمة إذا وجدت */
+.bottom-right,
+.bottom-left {
+  display: none !important;
 }
 
 /* زر تبديل الوضع الليلي */

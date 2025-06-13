@@ -20,8 +20,8 @@ function initializeContentLoader() {
         // تحميل معلومات التذييل
         loadFooterData();
         
-        // تحميل الأزرار العائمة
-        loadFloatingButtons();
+        // الأزرار العائمة الآن ثابتة في HTML - لا حاجة للتحميل الديناميكي
+        console.log('✅ Floating buttons are now static in HTML');
     } catch (error) {
         handleError(error, 'content-loader-initialization');
     }

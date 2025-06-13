@@ -7,9 +7,11 @@
       "icon": "📞",
       "action": "tel:+966500000000",
       "color": "#28a745",
-      "position": "bottom-right",
+      "position": "bottom-right-top",
       "isActive": true,
-      "order": 1
+      "order": 1,
+      "bottom": "90px",
+      "right": "20px"
     },
     {
       "id": 2,
@@ -18,19 +20,28 @@
       "icon": "💬",
       "action": "https://wa.me/966500000000",
       "color": "#25d366",
-      "position": "bottom-left",
+      "position": "bottom-right-bottom",
       "isActive": true,
-      "order": 2
+      "order": 2,
+      "bottom": "20px",
+      "right": "20px"
     }
   ],
   "buttonSettings": {
-    "showText": true,
+    "showText": false,
     "showIcon": true,
     "size": "medium",
     "shape": "circle",
-    "animation": "pulse",
+    "animation": "hover-scale",
     "shadow": true,
-    "mobileOnly": false
+    "mobileOnly": false,
+    "position": "bottom-right",
+    "spacing": "70px"
+  },
+  "contactInfo": {
+    "phone": "+966500000000",
+    "whatsapp": "+966500000000",
+    "email": "info@hydraulic-tow-truck.com"
   }
 }
 

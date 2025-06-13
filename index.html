@@ -195,7 +195,20 @@
     
     <!-- الأزرار العائمة -->
     <div class="floating-buttons" id="floating-buttons">
-        <!-- سيتم إضافة الأزرار العائمة هنا ديناميكيًا من ملف buttons.json -->
+        <!-- أزرار الاتصال الثابتة -->
+        <a href="tel:+966500000000" 
+           class="floating-button call-button" 
+           style="position: fixed; bottom: 90px; right: 20px; background-color: #28a745; z-index: 1000; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.3s ease;"
+           title="اتصل بنا"
+           onmouseover="this.style.transform='scale(1.1)'"
+           onmouseout="this.style.transform='scale(1)'">📞</a>
+        
+        <a href="https://wa.me/966500000000" 
+           class="floating-button whatsapp-button" 
+           style="position: fixed; bottom: 20px; right: 20px; background-color: #25d366; z-index: 1000; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.3s ease;"
+           title="واتساب"
+           onmouseover="this.style.transform='scale(1.1)'"
+           onmouseout="this.style.transform='scale(1)'">💬</a>
     </div>
     
     <!-- ملفات JavaScript -->
