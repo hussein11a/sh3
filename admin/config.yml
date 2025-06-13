@@ -86,7 +86,7 @@ collections:
             fields:
               - { label: "المعرف", name: "id", widget: "number" }
               - { label: "عنوان الخدمة", name: "title", widget: "string" }
-              - { label: "وصف الخدمة", name: "description", widget: "string" }
+              - { label: "وصف الخدمة", name: "description", widget: "text" }
               - { label: "أيقونة الخدمة", name: "icon", widget: "string", required: false }
               - { label: "صورة الخدمة", name: "image", widget: "image", required: false }
               - { label: "نشط", name: "isActive", widget: "boolean", default: true }

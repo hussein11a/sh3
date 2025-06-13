@@ -4,7 +4,7 @@
       "id": 1,
       "title": "خدمة نقل السيارات لمراكز الصيانة",
       "description": "نوفر خدمة نقل سيارتك بأمان تام من وإلى مراكز الصيانة المعتمدة، لضمان راحتك وتوفير وقتك.",
-      "icon": "car_repair.png",
+      "icon": "/img/services/generic_tow_truck.jpg",
       "isActive": true,
       "order": 1
     },
@@ -12,7 +12,7 @@
       "id": 2,
       "title": "خدمة نقل السيارات لمراكز التقديرات",
       "description": "نقوم بنقل سيارتك إلى مراكز التقديرات لتقييم الأضرار، مع الحرص على التعامل الاحترافي والدقيق.",
-      "icon": "car_assessment.png",
+      "icon": "/img/services/generic_tow_truck.jpg",
       "isActive": true,
       "order": 2
     },
@@ -20,7 +20,7 @@
       "id": 3,
       "title": "خدمة نقل السيارات لمراكز الفحص الدوري",
       "description": "نقدم خدمة نقل سيارتك إلى مراكز الفحص الدوري، لضمان اجتيازها الفحص بسهولة ويسر.",
-      "icon": "car_inspection.png",
+      "icon": "/img/services/generic_tow_truck.jpg",
       "isActive": true,
       "order": 3
     },
@@ -28,25 +28,33 @@
       "id": 4,
       "title": "خدمة نقل السيارات المتعطلة (زلاجات متوفرة)",
       "description": "خدمة متخصصة لنقل السيارات التي تعاني من أعطال في ناقل الحركة (القير)، حيث نوفر زلاجات لضمان نقل آمن وسلس.",
-      "icon": "broken_car_towing.png",
+      "icon": "/img/services/generic_tow_truck.jpg",
       "isActive": true,
       "order": 4
+    },
+    {
+      "id": 7,
+      "title": "خدمة نقل السيارات بين المدن",
+      "description": "نقل سيارتك بين المدن بأمان وسرعة، مع فريق متخصص لضمان وصولها بحالة ممتازة.",
+      "icon": "/img/services/generic_tow_truck.jpg",
+      "isActive": true,
+      "order": 5
     },
     {
       "id": 5,
       "title": "خدمة نقل السيارات الفاخرة",
       "description": "خدمة نقل مخصصة للسيارات الفاخرة، مع توفير أقصى درجات العناية والحماية لضمان وصولها بأمان.",
       "icon": "luxury_car_transport.png",
-      "isActive": true,
-      "order": 5
+      "isActive": false,
+      "order": 6
     },
     {
       "id": 6,
       "title": "خدمة نقل الدبابات",
       "description": "خدمة نقل آمنة وموثوقة للدبابات، مع ضمان التعامل الاحترافي والحفاظ على سلامتها خلال النقل.",
       "icon": "motorcycle_transport.png",
-      "isActive": true,
-      "order": 6
+      "isActive": false,
+      "order": 7
     }
   ],
   "serviceSettings": {
@@ -54,9 +62,10 @@
     "subtitle": "نقدم مجموعة متكاملة من خدمات السطحة الهيدروليكية",
     "description": "خدمات سطحة هيدروليك متميزة وسريعة على مدار الساعة لمساعدتك في جميع حالات الطوارئ على الطريق",
     "showIcons": true,
-    "showImages": false,
+    "showImages": true,
     "layout": "grid",
     "itemsPerRow": 3
   }
 }
+
 
