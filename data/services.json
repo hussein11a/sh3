@@ -3,57 +3,57 @@
     {
       "id": 1,
       "title": "خدمة نقل السيارات لمراكز الصيانة",
-      "description": "نوفر خدمة نقل سيارتك بأمان تام من وإلى مراكز الصيانة المعتمدة، لضمان راحتك وتوفير وقتك.",
-      "icon": "/img/services/generic_tow_truck.jpg",
+      "description": "- نقل آمن وسريع.\n- توفير للوقت والجهد.",
+      "icon": "/img/services/car_repair.svg",
       "isActive": true,
       "order": 1
     },
     {
       "id": 2,
       "title": "خدمة نقل السيارات لمراكز التقديرات",
-      "description": "نقوم بنقل سيارتك إلى مراكز التقديرات لتقييم الأضرار، مع الحرص على التعامل الاحترافي والدقيق.",
-      "icon": "/img/services/generic_tow_truck.jpg",
+      "description": "- نقل احترافي لتقييم الأضرار.\n- تعامل دقيق وموثوق.",
+      "icon": "/img/services/car_assessment.svg",
       "isActive": true,
       "order": 2
     },
     {
       "id": 3,
       "title": "خدمة نقل السيارات لمراكز الفحص الدوري",
-      "description": "نقدم خدمة نقل سيارتك إلى مراكز الفحص الدوري، لضمان اجتيازها الفحص بسهولة ويسر.",
-      "icon": "/img/services/generic_tow_truck.jpg",
+      "description": "- نقل مريح للفحص الدوري.\n- ضمان اجتياز الفحص بسهولة.",
+      "icon": "/img/services/car_inspection.svg",
       "isActive": true,
       "order": 3
     },
     {
       "id": 4,
       "title": "خدمة نقل السيارات المتعطلة (زلاجات متوفرة)",
-      "description": "خدمة متخصصة لنقل السيارات التي تعاني من أعطال في ناقل الحركة (القير)، حيث نوفر زلاجات لضمان نقل آمن وسلس.",
-      "icon": "/img/services/generic_tow_truck.jpg",
+      "description": "- نقل آمن للسيارات المعطلة.\n- زلاجات خاصة للقير.",
+      "icon": "/img/services/broken_car_towing.svg",
       "isActive": true,
       "order": 4
     },
     {
       "id": 7,
       "title": "خدمة نقل السيارات بين المدن",
-      "description": "نقل سيارتك بين المدن بأمان وسرعة، مع فريق متخصص لضمان وصولها بحالة ممتازة.",
-      "icon": "/img/services/generic_tow_truck.jpg",
+      "description": "- نقل بين المدن بأمان.\n- فريق متخصص وسريع.",
+      "icon": "/img/services/city_transport.svg",
       "isActive": true,
       "order": 5
     },
     {
       "id": 5,
       "title": "خدمة نقل السيارات الفاخرة",
-      "description": "خدمة نقل مخصصة للسيارات الفاخرة، مع توفير أقصى درجات العناية والحماية لضمان وصولها بأمان.",
-      "icon": "luxury_car_transport.png",
-      "isActive": false,
+      "description": "- عناية فائقة بالسيارات الفاخرة.\n- حماية قصوى أثناء النقل.",
+      "icon": "/img/services/luxury_car.svg",
+      "isActive": true,
       "order": 6
     },
     {
       "id": 6,
-      "title": "خدمة نقل الدبابات",
-      "description": "خدمة نقل آمنة وموثوقة للدبابات، مع ضمان التعامل الاحترافي والحفاظ على سلامتها خلال النقل.",
-      "icon": "motorcycle_transport.png",
-      "isActive": false,
+      "title": "خدمة نقل الدراجات النارية",
+      "description": "- نقل آمن وموثوق للدراجات.\n- تعامل احترافي لسلامتها.",
+      "icon": "/img/services/motorcycle_transport.svg",
+      "isActive": true,
       "order": 7
     }
   ],

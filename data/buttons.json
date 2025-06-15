@@ -17,7 +17,7 @@
       "id": 2,
       "type": "whatsapp",
       "text": "واتساب",
-      "icon": "💬",
+      "icon": "/img/whatsapp.svg",
       "action": "https://wa.me/966500000000",
       "color": "#25d366",
       "position": "bottom-right-bottom",
@@ -44,4 +44,5 @@
     "email": "info@hydraulic-tow-truck.com"
   }
 }
+
 
