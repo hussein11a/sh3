@@ -3,7 +3,7 @@
 # إعدادات البناء
 [build]
   publish = "/"
-  command = "# لا يوجد أمر بناء لموقع ثابت"
+  command = "npm run build"
 
 # إعدادات Netlify Identity
 [identity]
@@ -49,12 +49,4 @@
   NODE_VERSION = "16.14.0"
   NETLIFY_IDENTITY_ENABLED = "true"
 
-# إعدادات الخدمات
-[dev]
-  framework = "#static"
-  command = "npx serve"
-  port = 8888
-  targetPort = 5000
-  publish = "/"
-  autoLaunch = true
 
