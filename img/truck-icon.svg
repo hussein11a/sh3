@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" fill="none">
+  <!-- خلفية الشاحنة -->
+  <rect x="20" y="60" width="120" height="40" rx="5" fill="#FF4444"/>
+  
+  <!-- مقدمة الشاحنة -->
+  <rect x="140" y="50" width="30" height="50" rx="3" fill="#FF6666"/>
+  
+  <!-- نوافذ -->
+  <rect x="145" y="55" width="20" height="15" rx="2" fill="#87CEEB"/>
+  
+  <!-- العجلات -->
+  <circle cx="40" cy="105" r="12" fill="#333"/>
+  <circle cx="40" cy="105" r="8" fill="#666"/>
+  <circle cx="120" cy="105" r="12" fill="#333"/>
+  <circle cx="120" cy="105" r="8" fill="#666"/>
+  <circle cx="155" cy="105" r="10" fill="#333"/>
+  <circle cx="155" cy="105" r="6" fill="#666"/>
+  
+  <!-- منصة السطحة -->
+  <rect x="25" y="45" width="110" height="8" rx="2" fill="#FFD700"/>
+  
+  <!-- ذراع هيدروليكي -->
+  <rect x="30" y="35" width="4" height="15" fill="#888"/>
+  <rect x="130" y="35" width="4" height="15" fill="#888"/>
+  
+  <!-- سيارة على السطحة -->
+  <rect x="50" y="30" width="60" height="20" rx="3" fill="#4285F4"/>
+  <rect x="55" y="25" width="50" height="8" rx="2" fill="#87CEEB"/>
+  <circle cx="60" cy="52" r="4" fill="#333"/>
+  <circle cx="100" cy="52" r="4" fill="#333"/>
+  
+  <!-- تفاصيل إضافية -->
+  <rect x="25" y="65" width="8" height="8" fill="#FFD700"/>
+  <rect x="127" y="65" width="8" height="8" fill="#FFD700"/>
+  
+  <!-- أضواء -->
+  <circle cx="175" cy="75" r="3" fill="#FFFF00"/>
+  <circle cx="175" cy="85" r="3" fill="#FF0000"/>
+</svg>
+
