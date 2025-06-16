@@ -36,6 +36,9 @@
     <link rel="stylesheet" href="/css/dark-mode.css">
     <link rel="stylesheet" href="/css/responsive.css">
     
+    <!-- خطوط جوجل -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    
     <!-- ملف Manifest لدعم PWA -->
     <link rel="manifest" href="/manifest.json">
     
@@ -144,8 +147,20 @@
     <!-- القسم الرئيسي -->
     <section class="hero">
         <div class="container">
+            <img src="/img/tow-truck-hero.png" alt="سطحة هيدروليك" class="hero-image">
             <h1>سطحة هيدروليك</h1>
-            <p>خدمات سطحة هيدروليك متميزة وسريعة على مدار الساعة</p>
+            <p>خدمة نقل احترافية</p>
+            <p class="hero-subtitle">نصل إليك في أسرع وقت ممكن</p>
+            <div class="hero-features">
+                <span class="feature-item">⭐ تقييم 5 نجوم</span>
+                <span class="feature-item">🛡️ مؤمن بالكامل</span>
+                <span class="feature-item">⏰ خدمة 24/7</span>
+            </div>
+            <div class="hero-buttons">
+                <a href="tel:+966500000000" class="button primary-button">📞 اتصل الآن</a>
+                <a href="https://wa.me/966500000000" class="button secondary-button">💬 واتساب</a>
+            </div>
+            <p class="scroll-down">اكتشف خدماتنا</p>
         </div>
     </section>
     
@@ -163,6 +178,34 @@
         </div>
     </section>
     
+    <!-- قسم معلومات الاتصال -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-card">
+                <h3>اتصال مباشر</h3>
+                <p>تواصل معنا عبر الهاتف للحصول على خدمة فورية</p>
+                <a href="tel:+966500000000" class="button">تواصل الآن</a>
+            </div>
+            <div class="contact-card">
+                <h3>واتساب</h3>
+                <p>أرسل رسالة واتساب وسنرد عليك فوراً</p>
+                <a href="https://wa.me/966500000000" class="button">تواصل الآن</a>
+            </div>
+            <div class="contact-card">
+                <h3>البريد الإلكتروني</h3>
+                <p>info@hydraulic-tow-truck.sa</p>
+            </div>
+            <div class="contact-card">
+                <h3>منطقة الخدمة</h3>
+                <p>جميع أنحاء المملكة</p>
+            </div>
+            <div class="contact-card">
+                <h3>ساعات العمل</h3>
+                <p>24 ساعة / 7 أيام</p>
+            </div>
+        </div>
+    </section>
+
     <!-- التذييل -->
     <footer class="footer">
         <div class="container">
@@ -195,20 +238,7 @@
     
     <!-- الأزرار العائمة -->
     <div class="floating-buttons" id="floating-buttons">
-        <!-- أزرار الاتصال الثابتة -->
-        <a href="tel:+966500000000" 
-           class="floating-button call-button" 
-           style="position: fixed; bottom: 90px; right: 20px; background-color: #28a745; z-index: 1000; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.3s ease;"
-           title="اتصل بنا"
-           onmouseover="this.style.transform='scale(1.1)'"
-           onmouseout="this.style.transform='scale(1)'">📞</a>
-        
-        <a href="https://wa.me/966500000000" 
-           class="floating-button whatsapp-button" 
-           style="position: fixed; bottom: 20px; right: 20px; background-color: #25d366; z-index: 1000; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.3s ease;"
-           title="واتساب"
-           onmouseover="this.style.transform='scale(1.1)'"
-           onmouseout="this.style.transform='scale(1)'">💬</a>
+        <!-- سيتم إضافة الأزرار العائمة هنا ديناميكيًا من ملف buttons.json -->
     </div>
     
     <!-- ملفات JavaScript -->
@@ -221,18 +251,19 @@
     
     <!-- Service Worker لدعم PWA -->
     <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js')
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("/service-worker.js")
                     .then(registration => {
-                        console.log('Service Worker registered successfully:', registration);
+                        console.log("Service Worker registered successfully:", registration);
                     })
                     .catch(error => {
-                        console.log('Service Worker registration failed:', error);
+                        console.log("Service Worker registration failed:", error);
                     });
             });
         }
     </script>
 </body>
 </html>
+
 
