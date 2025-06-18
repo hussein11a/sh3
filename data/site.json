@@ -16,8 +16,7 @@
     "twitterCard": "summary_large_image",
     "enableDarkMode": true,
     "enableAutoDarkMode": true,
-    "enableBatterySaver": true,
-    "enableProtection": true
+    "enableBatterySaver": true
   },
   "seo": {
     "title": "سطحة هيدروليك | خدمات سحب السيارات على مدار الساعة",
@@ -34,4 +33,5 @@
     "twitterImage": "/img/og-image.jpg"
   }
 }
+
 

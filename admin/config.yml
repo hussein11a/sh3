@@ -6,8 +6,8 @@ backend:
   branch: main # اسم الفرع الرئيسي في مستودع Git
 
 # عنوان لوحة التحكم
-site_url: https://hydraulic-tow-truck.netlify.app
-display_url: https://hydraulic-tow-truck.netlify.app
+site_url: https://sathtye.netlify.app
+display_url: https://sathtye.netlify.app
 logo_url: /img/logo.png
 
 # مجلد الوسائط
@@ -51,7 +51,6 @@ collections:
               - { label: "تفعيل الوضع الليلي", name: "enableDarkMode", widget: "boolean", default: true }
               - { label: "تفعيل الوضع الليلي التلقائي", name: "enableAutoDarkMode", widget: "boolean", default: true }
               - { label: "تفعيل وضع توفير البطارية", name: "enableBatterySaver", widget: "boolean", default: true }
-              - { label: "تفعيل حماية المحتوى", name: "enableProtection", widget: "boolean", default: true }
           
           - label: "إعدادات SEO"
             name: "seo"
@@ -186,4 +185,6 @@ collections:
               - { label: "الأيقونة", name: "icon", widget: "string", required: false }
               - { label: "نشط", name: "isActive", widget: "boolean", default: true }
               - { label: "الترتيب", name: "order", widget: "number", default: 1 }
+
+
 
